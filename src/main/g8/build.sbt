@@ -28,11 +28,3 @@ scalacOptions ++= List( // useful compiler flags for scala
   "-Ywarn-numeric-widen",
   "-Xfuture"
 )
-
-wartremoverErrors ++= Warts.allBut(
-  Wart.DefaultArguments,
-  Wart.FinalCaseClass,
-  Wart.NoNeedForMonad,
-  Wart.Throw,
-  Wart.Var
-)
