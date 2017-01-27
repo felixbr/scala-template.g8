@@ -26,6 +26,8 @@ object Lib {
 
   val pureConfig = "com.github.melrief" %% "pureconfig" % "0.5.0"
 
+  val pprint = "com.lihaoyi" %% "pprint" % "0.4.4"
+
   val scalaTest = "org.scalatest" %% "scalatest" % "3.0.0" % "test"
 
 }
