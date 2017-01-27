@@ -1,7 +1,7 @@
 import org.scalatest._
 import GreetingFormatter._
 
-class GreetingFormatterSpec extends WordSpec with Matchers {
+class GreetingFormatterSpec extends WordSpec with MustMatchers {
 
   val greeting = "Hello"
   val receiver = "World"

@@ -7,9 +7,9 @@ lazy val root = (project in file(".")).settings(
   name := """$name$""",
   version := "0.1.0",
   libraryDependencies ++= List(
-    "org.scalatest" %% "scalatest" % "3.0.0" % "test"
+    Lib.scalaTest
   )
-)
+).enablePlugins(JavaAppPackaging)
 
 cancelable in Global := true
 
