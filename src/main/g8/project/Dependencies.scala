@@ -15,6 +15,8 @@ object Lib {
     val stream  = "com.typesafe.akka" %% "akka-stream"  % Version.akka
     val http    = "com.typesafe.akka" %% "akka-http"    % Version.akka
 
+    val httpCirce = "de.heikoseeberger" %% "akka-http-circe" % "1.12.0"
+
     val testkit       = "com.typesafe.akka" %% "akka-testkit"        % Version.akka % "test"
     val httpTestkit   = "com.typesafe.akka" %% "akka-http-testkit"   % Version.akka % "test"
     val streamTestkit = "com.typesafe.akka" %% "akka-stream-testkit" % Version.akka % "test"
