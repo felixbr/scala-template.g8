@@ -13,8 +13,8 @@ object Lib {
     val actor   = "com.typesafe.akka" %% "akka-actor"   % Version.akka
     val cluster = "com.typesafe.akka" %% "akka-cluster" % Version.akka
     val stream  = "com.typesafe.akka" %% "akka-stream"  % Version.akka
-    val http    = "com.typesafe.akka" %% "akka-http"    % Version.akka
 
+    val http      = "com.typesafe.akka" %% "akka-http"       % "10.0.3"
     val httpCirce = "de.heikoseeberger" %% "akka-http-circe" % "1.12.0"
 
     val testkit       = "com.typesafe.akka" %% "akka-testkit"        % Version.akka % "test"
