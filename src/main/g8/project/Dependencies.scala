@@ -14,19 +14,19 @@ object Lib {
     val cluster = "com.typesafe.akka" %% "akka-cluster" % Version.akka
     val stream  = "com.typesafe.akka" %% "akka-stream"  % Version.akka
 
-    val http        = "com.typesafe.akka" %% "akka-http"         % Version.akkaHttp
-    val httpTestkit = "com.typesafe.akka" %% "akka-http-testkit" % Version.akkaHttp % "test"
-    val httpCirce   = "de.heikoseeberger" %% "akka-http-circe"   % "1.12.0"
+    val http      = "com.typesafe.akka" %% "akka-http"       % Version.akkaHttp
+    val httpCirce = "de.heikoseeberger" %% "akka-http-circe" % "1.12.0"
 
-    val testkit       = "com.typesafe.akka" %% "akka-testkit"        % Version.akka % "test"
-    val streamTestkit = "com.typesafe.akka" %% "akka-stream-testkit" % Version.akka % "test"
+    val testkit       = "com.typesafe.akka" %% "akka-testkit"        % Version.akka     % "test"
+    val streamTestkit = "com.typesafe.akka" %% "akka-stream-testkit" % Version.akka     % "test"
+    val httpTestkit   = "com.typesafe.akka" %% "akka-http-testkit"   % Version.akkaHttp % "test"
   }
 
   val cats        = "org.typelevel"        %% "cats"         % "0.9.0"
   val betterFiles = "com.github.pathikrit" %% "better.files" % "2.17.1"
   val pureConfig  = "com.github.melrief"   %% "pureconfig"   % "0.5.0"
   val pprint      = "com.lihaoyi"          %% "pprint"       % "0.4.4"
-  val scalaTest   = "org.scalatest"        %% "scalatest"    % "3.0.1" % "test"
+  val scalaTest   = "org.scalatest"        %% "scalatest"    % "3.0.0" % "test"
 
 }
 
