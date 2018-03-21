@@ -8,12 +8,11 @@ lazy val root = (project in file("."))
     name := """$name$""",
     version := "0.1.0",
     libraryDependencies ++= List(
-      Lib.cats,
-      Lib.betterFiles,
-      Lib.pprint,
-      Lib.scalaTest,
-      Lib.scalaCheck
-    ) ++ Lib.circe.json
+      Dependencies.monix,
+      Dependencies.betterFiles,
+      Dependencies.scalaTest,
+      Dependencies.scalaCheck
+    ) ++ Dependencies.circe.json
   )
   .enablePlugins(JavaAppPackaging)
 

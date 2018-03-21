@@ -1,6 +1,6 @@
 import sbt._
 
-object Lib {
+object Dependencies {
 
   object circe {
     val core    = "io.circe" %% "circe-core"    % Version.circe
@@ -19,7 +19,7 @@ object Lib {
     val stream  = "com.typesafe.akka" %% "akka-stream"  % Version.akka
 
     val http      = "com.typesafe.akka" %% "akka-http"       % Version.akkaHttp
-    val httpCirce = "de.heikoseeberger" %% "akka-http-circe" % "1.17.0"
+    val httpCirce = "de.heikoseeberger" %% "akka-http-circe" % "1.19.0"
 
     val testkit       = "com.typesafe.akka" %% "akka-testkit"        % Version.akka     % "test"
     val streamTestkit = "com.typesafe.akka" %% "akka-stream-testkit" % Version.akka     % "test"
@@ -33,7 +33,9 @@ object Lib {
     val pureConfig = "eu.timepit" %% "refined-pureconfig" % Version.refined
   }
 
-  val cats        = "org.typelevel"        %% "cats"         % "0.9.0"
+  val cats  = "org.typelevel" %% "cats"  % "1.0.1"
+  val monix = "io.monix"      %% "monix" % "3.0.0-RC1"
+
   val betterFiles = "com.github.pathikrit" %% "better-files" % "3.0.0"
   val scalajHttp  = "org.scalaj"           %% "scalaj-http"  % "2.3.0"
   val pureConfig  = "com.github.melrief"   %% "pureconfig"   % "0.7.2"
@@ -44,7 +46,7 @@ object Lib {
 }
 
 object Version {
-  val circe    = "0.8.0"
+  val circe    = "0.9.1"
   val akka     = "2.5.3"
   val akkaHttp = "10.0.9"
   val refined  = "0.8.2"
