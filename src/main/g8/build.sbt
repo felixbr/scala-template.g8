@@ -2,7 +2,7 @@ lazy val root = (project in file("."))
   .settings(
     inThisBuild(
       List(
-        scalaVersion := "2.12.2"
+        scalaVersion := "2.12.6"
       )
     ),
     name := """$name$""",
@@ -26,5 +26,6 @@ scalacOptions ++= List( // useful compiler flags for scala
   "-Xlint",
   "-Yno-adapted-args",
   "-Ywarn-numeric-widen",
-  "-Xfuture"
+  "-Xfuture",
+  "-Ypartial-unification"
 )
