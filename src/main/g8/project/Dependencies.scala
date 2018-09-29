@@ -7,10 +7,11 @@ object Dependencies {
     val generic = "io.circe" %% "circe-generic" % Version.circe
     val parser  = "io.circe" %% "circe-parser"  % Version.circe
     val java8   = "io.circe" %% "circe-java8"   % Version.circe
-    val yaml    = "io.circe" %% "circe-yaml"    % "0.6.1"
+    val java8   = "io.circe" %% "circe-literal" % Version.circe
+    val yaml    = "io.circe" %% "circe-yaml"    % "0.8.0"
 
     val json = List(core, generic, parser)
-    val all  = List(core, generic, parser, java8, yaml)
+    val all  = List(core, generic, parser, java8, literal, yaml)
   }
 
   object akka {
@@ -19,7 +20,7 @@ object Dependencies {
     val stream  = "com.typesafe.akka" %% "akka-stream"  % Version.akka
 
     val http      = "com.typesafe.akka" %% "akka-http"       % Version.akkaHttp
-    val httpCirce = "de.heikoseeberger" %% "akka-http-circe" % "1.19.0"
+    val httpCirce = "de.heikoseeberger" %% "akka-http-circe" % "1.21.1"
 
     val testkit       = "com.typesafe.akka" %% "akka-testkit"        % Version.akka     % "test"
     val streamTestkit = "com.typesafe.akka" %% "akka-stream-testkit" % Version.akka     % "test"
@@ -46,8 +47,8 @@ object Dependencies {
 }
 
 object Version {
-  val circe    = "0.9.1"
-  val akka     = "2.5.3"
-  val akkaHttp = "10.0.9"
+  val circe    = "0.9.3"
+  val akka     = "2.5.16"
+  val akkaHttp = "10.1.5"
   val refined  = "0.8.2"
 }

@@ -1,3 +1,5 @@
+import sbt.IvyConsole.Dependencies
+
 lazy val root = (project in file("."))
   .settings(
     inThisBuild(
@@ -9,10 +11,9 @@ lazy val root = (project in file("."))
     version := "0.1.0",
     libraryDependencies ++= List(
       Dependencies.monix,
-      Dependencies.betterFiles,
       Dependencies.scalaTest,
       Dependencies.scalaCheck
-    ) ++ Dependencies.circe.json
+    ) ++ Dependencies.circe.all
   )
   .enablePlugins(JavaAppPackaging)
 
@@ -23,7 +24,8 @@ scalacOptions ++= List( // useful compiler flags for scala
   "-feature",
   "-unchecked",
   "-Xfatal-warnings",
-  "-Xlint",
+  "-Xlint:_",
+  "-Ywarn-unused:-imports",
   "-Yno-adapted-args",
   "-Ywarn-numeric-widen",
   "-Xfuture",
