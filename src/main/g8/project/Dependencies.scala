@@ -7,7 +7,7 @@ object Dependencies {
     val generic = "io.circe" %% "circe-generic" % Version.circe
     val parser  = "io.circe" %% "circe-parser"  % Version.circe
     val java8   = "io.circe" %% "circe-java8"   % Version.circe
-    val java8   = "io.circe" %% "circe-literal" % Version.circe
+    val literal = "io.circe" %% "circe-literal" % Version.circe
     val yaml    = "io.circe" %% "circe-yaml"    % "0.8.0"
 
     val json = List(core, generic, parser)
@@ -40,7 +40,7 @@ object Dependencies {
   val betterFiles = "com.github.pathikrit" %% "better-files" % "3.0.0"
   val scalajHttp  = "org.scalaj"           %% "scalaj-http"  % "2.3.0"
   val pureConfig  = "com.github.melrief"   %% "pureconfig"   % "0.7.2"
-  val pprint      = "com.lihaoyi"          %% "pprint"       % "0.5.0"
+  val pprint      = "com.lihaoyi"          %% "pprint"       % "0.5.3"
   val scalaTest   = "org.scalatest"        %% "scalatest"    % "3.0.1" % "test"
   val scalaCheck  = "org.scalacheck"       %% "scalacheck"   % "1.13.4" % "test"
 
