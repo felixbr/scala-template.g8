@@ -8,9 +8,9 @@ object Dependencies {
     val parser  = "io.circe" %% "circe-parser"  % Version.circe
     val java8   = "io.circe" %% "circe-java8"   % Version.circe
     val literal = "io.circe" %% "circe-literal" % Version.circe
-    val yaml    = "io.circe" %% "circe-yaml"    % "0.8.0"
+    val yaml    = "io.circe" %% "circe-yaml"    % "0.9.0"
 
-    val json = List(core, generic, parser)
+    val json = List(core, generic, parser, java8)
     val all  = List(core, generic, parser, java8, literal, yaml)
   }
 
@@ -29,26 +29,21 @@ object Dependencies {
     val allHttp = List(http, httpCirce, httpTestkit)
   }
 
-  object refined {
-    val core       = "eu.timepit" %% "refined"            % Version.refined
-    val pureConfig = "eu.timepit" %% "refined-pureconfig" % Version.refined
-  }
+  val cats    = "org.typelevel" %% "cats"    % "1.6.0"
+  val monix   = "io.monix"      %% "monix"   % "3.0.0-RC2"
+  val decline = "com.monovore"  %% "decline" % "0.5.0"
 
-  val cats  = "org.typelevel" %% "cats"  % "1.0.1"
-  val monix = "io.monix"      %% "monix" % "3.0.0-RC1"
-
-  val betterFiles = "com.github.pathikrit" %% "better-files" % "3.0.0"
-  val scalajHttp  = "org.scalaj"           %% "scalaj-http"  % "2.3.0"
-  val pureConfig  = "com.github.melrief"   %% "pureconfig"   % "0.7.2"
-  val pprint      = "com.lihaoyi"          %% "pprint"       % "0.5.3"
+  val betterFiles = "com.github.pathikrit" %% "better-files" % "3.7.1"
+  val scalajHttp  = "org.scalaj"           %% "scalaj-http"  % "2.4.1"
+  val pureConfig  = "com.github.melrief"   %% "pureconfig"   % "0.10.2"
+  val pprint      = "com.lihaoyi"          %% "pprint"       % "0.5.4"
   val scalaTest   = "org.scalatest"        %% "scalatest"    % "3.0.1" % "test"
   val scalaCheck  = "org.scalacheck"       %% "scalacheck"   % "1.13.4" % "test"
 
 }
 
 object Version {
-  val circe    = "0.9.3"
-  val akka     = "2.5.16"
-  val akkaHttp = "10.1.5"
-  val refined  = "0.8.2"
+  val circe    = "0.11.1"
+  val akka     = "2.5.22"
+  val akkaHttp = "10.1.7"
 }
