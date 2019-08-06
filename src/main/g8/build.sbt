@@ -2,7 +2,7 @@ lazy val root = (project in file("."))
   .settings(
     inThisBuild(
       List(
-        scalaVersion := "2.12.8"
+        scalaVersion := "2.12.9"
       )
     ),
     name := """$name$""",
