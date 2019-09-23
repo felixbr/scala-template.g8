@@ -49,10 +49,10 @@ Runs the project test suite.
 #### testOnly (or test-only)
 
   ```bash
-  testOnly GreetingFormatterSpec
+  testOnly MainSpec
   ```
   
-Runs the specified spec only. You can use a wildcard (e.g. `*FormatterSpec`) to execute multiple matching specs.
+Runs the specified spec only. You can use a wildcard (e.g. `*MainSpec`) to execute multiple matching specs.
 
 
 #### testQuick (or test-quick)
