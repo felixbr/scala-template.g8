@@ -1,3 +1,6 @@
+Global / onChangedBuildSource := ReloadOnSourceChanges
+ThisBuild / turbo := true
+
 lazy val root = (project in file("."))
   .settings(
     inThisBuild(

@@ -1,10 +1,10 @@
 import sbt._
 
 object Version {
-  val circe    = "0.12.1"
+  val circe    = "0.13.0"
   val akka     = "2.5.23"
   val akkaHttp = "10.1.8"
-  val http4s   = "0.21.0-M5"
+  val http4s   = "0.21.0"
 }
 
 object Dependencies {
@@ -15,7 +15,7 @@ object Dependencies {
     val parser        = "io.circe" %% "circe-parser"         % Version.circe
     val java8         = "io.circe" %% "circe-java8"          % Version.circe
     val literal       = "io.circe" %% "circe-literal"        % Version.circe
-    val genericExtras = "io.circe" %% "circe-generic-extras" % "0.12.2"
+    val genericExtras = "io.circe" %% "circe-generic-extras" % Version.circe
     val derivation    = "io.circe" %% "circe-derivation"     % "0.12.0-M6"
     val yaml          = "io.circe" %% "circe-yaml"           % "0.11.0-M1"
 
@@ -50,9 +50,9 @@ object Dependencies {
     val all    = (server ++ client).distinct
   }
 
-  val cats    = "org.typelevel" %% "cats"    % "2.0.0"
-  val monix   = "io.monix"      %% "monix"   % "3.0.0"
-  val decline = "com.monovore"  %% "decline" % "0.6.2"
+  val cats    = "org.typelevel" %% "cats"           % "2.0.0"
+  val monix   = "io.monix"      %% "monix"          % "3.1.0"
+  val decline = "com.monovore"  %% "decline-effect" % "1.0.0"
 
   val betterFiles = "com.github.pathikrit" %% "better-files" % "3.7.1"
   val scalajHttp  = "org.scalaj"           %% "scalaj-http"  % "2.4.1"
