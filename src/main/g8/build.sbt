@@ -54,3 +54,6 @@ scalacOptions ++= List( // useful compiler flags for scala
   "-Ywarn-value-discard"               // Warn when non-Unit expression results are unused.
 )
 // format: on
+
+addCommandAlias("scalafmtFormatAll", "; root/scalafmtAll ; root/scalafmtSbt")
+addCommandAlias("scalafmtValidateAll", "; root/scalafmtCheckAll ; root/scalafmtSbtCheck")
