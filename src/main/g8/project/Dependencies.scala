@@ -20,8 +20,9 @@ object Dependencies {
     val derivation    = "io.circe" %% "circe-derivation"     % "0.12.0-M6"
     val yaml          = "io.circe" %% "circe-yaml"           % "0.11.0-M1"
 
-    val json = List(core, generic, genericExtras, parser)
-    val all  = List(core, generic, genericExtras, parser, literal, yaml)
+    val noGeneric = List(core, parser)
+    val json      = List(core, generic, genericExtras, parser)
+    val all       = List(core, generic, genericExtras, parser, literal, yaml)
   }
 
   object akka {
