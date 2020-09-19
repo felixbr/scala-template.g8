@@ -5,16 +5,14 @@ lazy val root = (project in file("."))
   .settings(
     inThisBuild(
       List(
-        scalaVersion := "2.13.1"
+        scalaVersion := "2.13.3"
       )
     ),
     name := """$name$""",
     version := "0.1.0",
     libraryDependencies ++= List(
-      Dependencies.monix,
-      Dependencies.scalaTest,
-      Dependencies.scalaCheck
-    ) ++ Dependencies.logging.viaLogback ++ Dependencies.circe.json
+      Dependencies.monix
+    ) ++ Dependencies.testing.all ++ Dependencies.logging.viaLog4j2 ++ Dependencies.circe.json
   )
   .enablePlugins(JavaAppPackaging)
 
@@ -38,7 +36,6 @@ scalacOptions ++= List( // useful compiler flags for scala
   "-Xlint:inaccessible",               // Warn about inaccessible types in method signatures.
   "-Xlint:infer-any",                  // Warn when a type argument is inferred to be `Any`.
   "-Xlint:missing-interpolator",       // A string literal appears to be missing an interpolator id.
-  "-Xlint:nullary-override",           // Warn when non-nullary `def f()' overrides nullary `def f'.
   "-Xlint:nullary-unit",               // Warn when nullary methods return Unit.
   "-Xlint:option-implicit",            // Option.apply used implicit view.
   "-Xlint:package-object-classes",     // Class or object defined in package object.

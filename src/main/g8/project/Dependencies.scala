@@ -4,7 +4,8 @@ object Version {
   val circe    = "0.13.0"
   val akka     = "2.5.23"
   val akkaHttp = "10.1.8"
-  val http4s   = "0.21.0"
+  val http4s   = "0.21.7"
+  val log4j2   = "2.11.1"
 }
 
 object Dependencies {
@@ -51,20 +52,35 @@ object Dependencies {
   }
 
   val cats    = "org.typelevel" %% "cats"           % "2.0.0"
-  val monix   = "io.monix"      %% "monix"          % "3.1.0"
+  val monix   = "io.monix"      %% "monix"          % "3.2.2"
   val decline = "com.monovore"  %% "decline-effect" % "1.0.0"
 
   val betterFiles = "com.github.pathikrit" %% "better-files" % "3.7.1"
-  val scalajHttp  = "org.scalaj"           %% "scalaj-http"  % "2.4.1"
   val pureConfig  = "com.github.melrief"   %% "pureconfig"   % "0.10.2"
   val pprint      = "com.lihaoyi"          %% "pprint"       % "0.5.4"
-  val scalaTest   = "org.scalatest"        %% "scalatest"    % "3.0.8" % "test"
-  val scalaCheck  = "org.scalacheck"       %% "scalacheck"   % "1.14.1" % "test"
+
+  val collectionCompat = "org.scala-lang.modules" %% "scala-collection-compat" % "2.1.6"
+
+  object testing {
+    val scalaTest               = "org.scalatest"     %% "scalatest"                % "3.2.2"       % "test"
+    val scalaCheck              = "org.scalacheck"    %% "scalacheck"               % "1.14.3"      % "test"
+    val scalaTestPlusScalaCheck = "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % "test"
+
+    val all = List(scalaTest, scalaCheck, scalaTestPlusScalaCheck)
+  }
 
   object logging {
-    val log4cats = "io.chrisdavenport" %% "log4cats-slf4j" % "1.0.0"
-    val logback  = "ch.qos.logback"    % "logback-classic" % "1.2.3"
+    val log4catsCore  = "io.chrisdavenport" %% "log4cats-core"  % "1.0.1"
+    val log4catsSLF4J = "io.chrisdavenport" %% "log4cats-slf4j" % "1.0.1"
 
-    val viaLogback = List(log4cats, logback)
+    object log4j2 {
+      val core = "org.apache.logging.log4j" % "log4j-core"       % Version.log4j2
+      val api  = "org.apache.logging.log4j" % "log4j-api"        % Version.log4j2
+      val impl = "org.apache.logging.log4j" % "log4j-slf4j-impl" % Version.log4j2
+
+      val all = List(core, api, impl)
+    }
+
+    val viaLog4j2 = List(log4catsCore, log4catsSLF4J) ++ log4j2.all
   }
 }
