@@ -1,11 +1,12 @@
 import sbt._
 
 object Version {
-  val circe    = "0.13.0"
+  val circe    = "0.14.0-M4"
   val akka     = "2.5.23"
   val akkaHttp = "10.1.8"
-  val http4s   = "0.21.7"
+  val http4s   = "1.0.0-M18"
   val log4j2   = "2.11.1"
+  val log4cats = "2.0.0-RC1"
 }
 
 object Dependencies {
@@ -33,9 +34,9 @@ object Dependencies {
     val http      = "com.typesafe.akka" %% "akka-http"       % Version.akkaHttp
     val httpCirce = "de.heikoseeberger" %% "akka-http-circe" % "1.27.0"
 
-    val testkit       = "com.typesafe.akka" %% "akka-testkit"        % Version.akka     % "test"
-    val streamTestkit = "com.typesafe.akka" %% "akka-stream-testkit" % Version.akka     % "test"
-    val httpTestkit   = "com.typesafe.akka" %% "akka-http-testkit"   % Version.akkaHttp % "test"
+    val testkit       = "com.typesafe.akka" %% "akka-testkit"        % Version.akka     % Test
+    val streamTestkit = "com.typesafe.akka" %% "akka-stream-testkit" % Version.akka     % Test
+    val httpTestkit   = "com.typesafe.akka" %% "akka-http-testkit"   % Version.akkaHttp % Test
 
     val allHttp = List(http, httpCirce, httpTestkit)
   }
@@ -52,27 +53,28 @@ object Dependencies {
     val all    = (server ++ client).distinct
   }
 
-  val cats    = "org.typelevel" %% "cats"           % "2.0.0"
-  val monix   = "io.monix"      %% "monix"          % "3.2.2"
-  val decline = "com.monovore"  %% "decline-effect" % "1.0.0"
+  val cats       = "org.typelevel" %% "cats"           % "2.4.0"
+  val catsEffect = "org.typelevel" %% "cats-effect"    % "3.0.0-RC2"
+  val monix      = "io.monix"      %% "monix"          % "3.2.2"
+  val decline    = "com.monovore"  %% "decline-effect" % "1.0.0"
 
   val betterFiles = "com.github.pathikrit" %% "better-files" % "3.7.1"
   val pureConfig  = "com.github.melrief"   %% "pureconfig"   % "0.10.2"
-  val pprint      = "com.lihaoyi"          %% "pprint"       % "0.5.4"
+  val pprint      = "com.lihaoyi"          %% "pprint"       % "0.6.0"
 
   val collectionCompat = "org.scala-lang.modules" %% "scala-collection-compat" % "2.1.6"
 
   object testing {
-    val scalaTest               = "org.scalatest"     %% "scalatest"                % "3.2.2"       % "test"
-    val scalaCheck              = "org.scalacheck"    %% "scalacheck"               % "1.14.3"      % "test"
-    val scalaTestPlusScalaCheck = "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % "test"
+    val scalaTest               = "org.scalatest"     %% "scalatest"                % "3.2.5"       % Test
+    val scalaCheck              = "org.scalacheck"    %% "scalacheck"               % "1.14.3"      % Test
+    val scalaTestPlusScalaCheck = "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % Test
 
     val all = List(scalaTest, scalaCheck, scalaTestPlusScalaCheck)
   }
 
   object logging {
-    val log4catsCore  = "io.chrisdavenport" %% "log4cats-core"  % "1.0.1"
-    val log4catsSLF4J = "io.chrisdavenport" %% "log4cats-slf4j" % "1.0.1"
+    val log4catsCore  = "org.typelevel" %% "log4cats-core"  % Version.log4cats
+    val log4catsSLF4J = "org.typelevel" %% "log4cats-slf4j" % Version.log4cats
 
     object log4j2 {
       val core = "org.apache.logging.log4j" % "log4j-core"       % Version.log4j2

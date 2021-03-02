@@ -5,14 +5,14 @@ lazy val root = (project in file("."))
   .settings(
     inThisBuild(
       List(
-        scalaVersion := "0.27.0-RC1"
+        scalaVersion := "3.0.0-RC1"
       )
     ),
     name := "$name$",
     version := "0.1.0",
     libraryDependencies ++= (
       List(
-        Dependencies.monix,
+        Dependencies.catsEffect,
       ) ++ Dependencies.logging.viaLog4j2 ++ Dependencies.circe.noGeneric
     ).map(_.withDottyCompat(scalaVersion.value)),
     libraryDependencies ++= List(

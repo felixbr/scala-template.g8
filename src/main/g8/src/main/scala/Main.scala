@@ -1,13 +1,9 @@
-import cats.effect.ExitCode
-import io.chrisdavenport.log4cats.Logger
-import io.chrisdavenport.log4cats.slf4j.Slf4jLogger
-import monix.eval.{Task, TaskApp}
+import cats.effect._
 
-object Main extends TaskApp {
-  implicit def log: Logger[Task] = Slf4jLogger.getLoggerFromName("Main")
+object Main extends IOApp.Simple {
 
-  override def run(args: List[String]): Task[ExitCode] =
+  override def run: IO[Unit] =
     for {
-      _ <- log.info("Hello, World!")
-    } yield ExitCode.Success
+      _ <- IO.println("Hello, World!")
+    } yield ()
 }
