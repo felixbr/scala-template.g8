@@ -22,7 +22,7 @@ object Dependencies {
     val yaml          = "io.circe" %% "circe-yaml"           % "0.11.0-M1"
 
     val noGeneric = List(core, parser)
-    val json      = List(core, generic, genericExtras, parser)
+    val json      = List(core, generic, parser)
     val all       = List(core, generic, genericExtras, parser, literal, yaml)
   }
 
@@ -65,9 +65,9 @@ object Dependencies {
   val collectionCompat = "org.scala-lang.modules" %% "scala-collection-compat" % "2.1.6"
 
   object testing {
-    val scalaTest               = "org.scalatest"     %% "scalatest"                % "3.2.5"       % Test
-    val scalaCheck              = "org.scalacheck"    %% "scalacheck"               % "1.14.3"      % Test
-    val scalaTestPlusScalaCheck = "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % Test
+    val scalaTest               = "org.scalatest"     %% "scalatest"       % "3.2.6"   % Test
+    val scalaCheck              = "org.scalacheck"    %% "scalacheck"      % "1.15.3"  % Test
+    val scalaTestPlusScalaCheck = "org.scalatestplus" %% "scalacheck-1-15" % "3.2.6.0" % Test
 
     val all = List(scalaTest, scalaCheck, scalaTestPlusScalaCheck)
   }

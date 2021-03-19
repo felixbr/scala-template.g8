@@ -12,13 +12,13 @@ lazy val root = (project in file("."))
     version := "0.1.0",
     libraryDependencies ++= (
       List(
-        Dependencies.catsEffect,
-      ) ++ Dependencies.logging.viaLog4j2 ++ Dependencies.circe.noGeneric
-    ).map(_.withDottyCompat(scalaVersion.value)),
+        //
+      ) ++ Dependencies.logging.viaLog4j2 ++ Dependencies.circe.json ++ Dependencies.http4s.all
+    ),
     libraryDependencies ++= List(
       Dependencies.testing.scalaTest, // Scalatest uses macros, so we cannot simply use the ".withDottyCompat" solution but need actual cross-built versions
-      Dependencies.testing.scalaCheck.withDottyCompat(scalaVersion.value),
-      Dependencies.testing.scalaTestPlusScalaCheck.intransitive().withDottyCompat(scalaVersion.value)
+      Dependencies.testing.scalaCheck,
+      Dependencies.testing.scalaTestPlusScalaCheck
     )
   )
   .enablePlugins(JavaAppPackaging)
